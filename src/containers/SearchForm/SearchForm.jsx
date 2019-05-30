@@ -1,14 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export class SearchForm extends Component {
-  render() {
-    return (
-      <form>
-        <input type="text"/>
-        <input type="submit" value="Search Umami"/>
-      </form>
-    )
-  }
+	state = {
+		input: ''
+	};
+
+	render() {
+		return (
+			<form>
+				<input type="text" value={this.state.input} onChange={e => this.setState({ input: e.target.value })} />
+				<input type="submit" value="Search Umami" />
+			</form>
+		);
+	}
 }
 
-export default SearchForm
+export default SearchForm;
