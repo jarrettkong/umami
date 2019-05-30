@@ -35,11 +35,7 @@ export class SearchResults extends Component {
 
 	render() {
 		const results = this.props.results.map(result => {
-			return (
-				<Link to={`/restaurant/${result.alias}`} key={result.id}>
-					<RestaurantCard info={result} />
-				</Link>
-			);
+			return <RestaurantCard key={result.id} info={result} />;
 		});
 
 		return !this.state.loading ? (

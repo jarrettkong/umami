@@ -5,14 +5,14 @@ import RestaurantPage from '../RestaurantPage/RestaurantPage';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
-function App() {
+const App = () => {
 	return (
 		<Switch>
 			<Route exact path="/" render={({ history }) => <Home history={history} />} />
 			<Route exact path="/search/:query" render={({ match }) => <SearchResults query={match.params.query} />} />
-			<Route exact path="/restaurant/:alias" render={({ match }) => <RestaurantPage alias={match.params.alias} />} />
+			<Route exact path="/restaurant/:id" render={({ match }) => <RestaurantPage id={match.params.id} />} />
 		</Switch>
 	);
-}
+};
 
 export default App;
