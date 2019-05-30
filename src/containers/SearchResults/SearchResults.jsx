@@ -34,7 +34,14 @@ export class SearchResults extends Component {
 	};
 
 	render() {
-		const results = this.props.results.map(result => <RestaurantCard key={result.id} info={result} />);
+		const results = this.props.results.map(result => {
+			return (
+				<Link to={`/restaurant/${result.alias}`} key={result.id}>
+					<RestaurantCard info={result} />
+				</Link>
+			);
+		});
+
 		return !this.state.loading ? (
 			<output>
 				<Link to="/">Return Home</Link>
