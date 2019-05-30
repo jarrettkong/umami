@@ -1,14 +1,29 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+// import { Redirect } from 'react-router-dom';
 
 export class SearchForm extends Component {
-  render() {
-    return (
-      <form>
-        <input type="text"/>
-        <input type="submit" value="Search Umami"/>
-      </form>
-    )
-  }
+	state = {
+		query: '',
+	};
+
+	redirect = async e => {
+		e.preventDefault();
+		this.state.query && this.props.history.push(`/search/${this.state.query}`)
+	};
+
+	render() {
+		return (
+			<form onSubmit={this.redirect}>
+				<input type="text" value={this.state.query} onChange={e => this.setState({ query: e.target.value })} />
+				<input type="submit" value="Search Umami" />
+			</form>
+		);
+	}
 }
 
-export default SearchForm
+SearchForm.propTypes = {
+	addSearchResults: PropTypes.func
+};
+
+export default SearchForm;

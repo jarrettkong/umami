@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import { restaurantsReducer } from './restaurantsReducer';
+import { detailsReducer } from './detailsReducer';
+import { resultsReducer } from './resultsReducer';
+import { trendingReducer } from './trendingReducer';
 
 export const rootReducer = combineReducers({
-	restaurants: restaurantsReducer
+	details: detailsReducer,
+	results: resultsReducer,
+	trending: trendingReducer
 });
