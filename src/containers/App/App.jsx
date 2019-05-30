@@ -9,6 +9,7 @@ function App() {
 		<Switch>
 			<Route exact path="/" render={({ history }) => <Home history={history} />} />
 			<Route exact path="/search/:query" render={({ match }) => <SearchResults query={match.params.query} />} />
+			<Route exact path="/restaurant/:alias" render={({ match }) => <SearchResults alias={match.params.alias} />} />
 		</Switch>
 	);
 }

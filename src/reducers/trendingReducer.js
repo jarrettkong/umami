@@ -1,7 +1,7 @@
-export const resultsReducer = (state = [], action) => {
+export const trendingReducer = (state = [], action) => {
 	const { type, payload } = action;
 	switch (type) {
-		case 'ADD_SEARCH_RESULTS':
+		case 'ADD_TRENDING':
 			return payload.restaurants;
 		default:
 			return state;
