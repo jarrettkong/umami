@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+// import { Redirect } from 'react-router-dom';
 
 export class SearchForm extends Component {
 	state = {
 		query: '',
-		redirect: false
 	};
 
-	searchApi = async e => {
+	redirect = async e => {
 		e.preventDefault();
-		this.setState({ redirect: true });
+		this.state.query && this.props.history.push(`/search/${this.state.query}`)
 	};
 
 	render() {
-		if (this.state.redirect) {
-			return <Redirect to={`/search/${this.state.query}`} />;
-		}
 		return (
-			<form onSubmit={this.searchApi}>
+			<form onSubmit={this.redirect}>
 				<input type="text" value={this.state.query} onChange={e => this.setState({ query: e.target.value })} />
 				<input type="submit" value="Search Umami" />
 			</form>

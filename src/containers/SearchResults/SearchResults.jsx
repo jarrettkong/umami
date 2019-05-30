@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import RestaurantCard from '../RestaurantCard/RestaurantCard';
 import { addSearchResults } from '../../actions';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Yelp from '../../api/Yelp';
 import { connect } from 'react-redux';
 
 export class SearchResults extends Component {
-	async componentDidMount() {
+	state = {
+		loading: false
+	};
+
+	componentDidMount() {
+		this.setState({ loading: true }, async () => {
+			await this.searchApi();
+			this.setState({ loading: false });
+		});
+	}
+
+	searchApi = async () => {
 		try {
 			const res = await Yelp.get('/businesses/search', {
 				params: {
@@ -19,10 +31,18 @@ export class SearchResults extends Component {
 		} catch (err) {
 			console.log(err.message);
 		}
-	}
+	};
+
 	render() {
 		const results = this.props.results.map(result => <RestaurantCard key={result.id} info={result} />);
-		return <output>{results}</output>;
+		return !this.state.loading ? (
+			<output>
+				<Link to="/">Return Home</Link>
+				{results || <h1>Your search did not match any results :(</h1>}
+			</output>
+		) : (
+			<h1>Loading...</h1>
+		);
 	}
 }
 

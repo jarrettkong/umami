@@ -6,7 +6,7 @@ export class Home extends Component {
 		return (
 			<section>
 				<h1>Umami</h1>
-				<SearchForm />
+				<SearchForm history={this.props.history} />
 			</section>
 		);
 	}

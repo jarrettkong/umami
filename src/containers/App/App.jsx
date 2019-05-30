@@ -7,7 +7,7 @@ import './App.css';
 function App() {
 	return (
 		<Switch>
-			<Route exact path="/" component={Home} />
+			<Route exact path="/" render={({ history }) => <Home history={history} />} />
 			<Route exact path="/search/:query" render={({ match }) => <SearchResults query={match.params.query} />} />
 		</Switch>
 	);
