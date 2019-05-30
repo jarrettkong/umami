@@ -1,41 +1,34 @@
 import React, { Component } from 'react';
-import { addSearchResults } from '../../actions';
+import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Yelp from '../../api/Yelp';
 
 export class SearchForm extends Component {
 	state = {
-		term: ''
+		query: '',
+		redirect: false
 	};
 
 	searchApi = async e => {
 		e.preventDefault();
-		try {
-			const res = await Yelp.get('/businesses/search', {
-				params: {
-					term: this.state.term,
-					location: 'Denver',
-					categories: 'japanese, All'
-				}
-			});
-			this.props.addSearchResults(res.data.businesses);
-		} catch (err) {
-			console.log(err.message);
-		}
+		this.setState({ redirect: true });
 	};
 
 	render() {
+		if (this.state.redirect) {
+			return <Redirect to={`/search/${this.state.query}`} />;
+		}
 		return (
 			<form onSubmit={this.searchApi}>
-				<input type="text" value={this.state.term} onChange={e => this.setState({ term: e.target.value })} />
+				<input type="text" value={this.state.query} onChange={e => this.setState({ query: e.target.value })} />
 				<input type="submit" value="Search Umami" />
 			</form>
 		);
 	}
 }
 
-export const mapDispatchToProps = dispatch => ({
-	addSearchResults: results => dispatch(addSearchResults(results))
-});
+SearchForm.propTypes = {
+	addSearchResults: PropTypes.func
+};
 
-export default connect(null, mapDispatchToProps)(SearchForm);
+export default SearchForm;
