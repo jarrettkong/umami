@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RestaurantCard from '../RestaurantCard/RestaurantCard';
+import Loader from '../../components/Loader/Loader';
 import { addSearchResults } from '../../actions';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -44,7 +45,7 @@ export class SearchResults extends Component {
 				{results || <h1>Your search did not match any results :(</h1>}
 			</output>
 		) : (
-			<h1>Loading...</h1>
+			<Loader message="Searching Umami"/>
 		);
 	}
 }

@@ -1,3 +1,5 @@
+@import './util/colors.scss';
+
 *,
 *::before,
 *::after {
@@ -6,10 +8,12 @@
 
 html,
 body {
+	background-color: $background-color;
 	margin: 0;
 	padding: 0;
 	line-height: 1.4;
 	font-size: 16px;
+	color: $body-copy-color;
 	width: 100vw;
 	min-height: 100vh;
 	font-family: "Roboto", sans-serif;

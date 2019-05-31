@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchForm from '../../containers/SearchForm/SearchForm';
+import Loader from '../Loader/Loader';
 import { connect } from 'react-redux';
 import Yelp from '../../api/Yelp';
 import { addTrending } from '../../actions';
@@ -49,7 +50,9 @@ export class Home extends Component {
 				</header>
 				<div className="Home-new-container">
 					<h3>New and Hot</h3>
-					<output className="Home-output">{!this.state.loading ? trending : <h2>Loading....</h2>}</output>
+					<output className="Home-output">
+						{!this.state.loading ? trending : <Loader message="Loading new and hot" />}
+					</output>
 				</div>
 			</section>
 		);
