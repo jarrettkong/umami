@@ -13,7 +13,7 @@ export class SearchForm extends Component {
 
 	render() {
 		return (
-			<form onSubmit={this.redirect}>
+			<form className="SearchForm" onSubmit={this.redirect}>
 				<input type="text" value={this.state.query} onChange={e => this.setState({ query: e.target.value })} />
 				<input type="submit" value="Search Umami" />
 			</form>

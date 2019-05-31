@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Yelp from '../../api/Yelp';
 import { addTrending } from '../../actions';
 import RestaurantCard from '../../containers/RestaurantCard/RestaurantCard';
+import './Home.scss';
 
 export class Home extends Component {
 	state = {
@@ -39,11 +40,17 @@ export class Home extends Component {
 		const trending = this.props.trending.map(restaurant => {
 			return <RestaurantCard info={restaurant} key={restaurant.id} />;
 		});
+
 		return (
-			<section>
-				<h1>Umami</h1>
-				<SearchForm history={this.props.history} />
-				<output>{!this.state.loading ? trending : <h2>Loading....</h2>}</output>
+			<section className="Home">
+				<header className="Home-header">
+					<h1>Umami</h1>
+					<SearchForm history={this.props.history} />
+				</header>
+				<div>
+					<h3>New and Hot</h3>
+					<output className="Home-output">{!this.state.loading ? trending : <h2>Loading....</h2>}</output>
+				</div>
 			</section>
 		);
 	}
