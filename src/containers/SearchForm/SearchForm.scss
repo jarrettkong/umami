@@ -24,6 +24,11 @@
     color: white;
     padding: 0;
     background-color: $main-color;
-    font-weight: 600;
+		font-weight: 600;
+		cursor: pointer;
+
+		&:hover {
+			background-color: lighten($color: $main-color, $amount: 5)
+		}
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Loader from '../../components/Loader/Loader';
 import { connect } from 'react-redux';
 import { addDetails } from '../../actions';
 import { cleanDetails } from '../../util/cleaners';
@@ -9,6 +10,7 @@ class RestaurantPage extends Component {
 		loading: false,
 		details: {}
 	};
+
 	componentDidMount() {
 		this.getRestaurantDetails(this.props.id);
 	}
@@ -48,7 +50,7 @@ class RestaurantPage extends Component {
 				<p>{details.reviewCount}</p>
 			</div>
 		) : (
-			<h1>Loading...</h1>
+			<Loader message="Loading restaurant data..." />
 		);
 	}
 }

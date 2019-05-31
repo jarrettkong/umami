@@ -1,13 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './RestaurantCard.scss';
 
 const RestaurantCard = props => {
 	const { info } = props;
 	return (
-		<Link to={`/restaurant/${info.id}`}>
-			<div style={{ border: '1px solid red' }}>
-				<h2>{info.name}</h2>
-				<p>{info.location.address1}</p>
+		<Link to={`/restaurant/${info.id}`} style={{ textDecoration: 'none' }}>
+			<div className="RestaurantCard">
+				<div className="RestaurantCard-header">
+					<h2>{info.name}</h2>
+				</div>
+				<div className="RestaurantCard-flex-wrapper">
+					<img src={info.image_url} alt="" />
+					<div>
+						<p>{info.location.address1}</p>
+						<p>
+							{info.location.city}, {info.location.state}
+						</p>
+					</div>
+				</div>
 			</div>
 		</Link>
 	);

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import './Loader.scss';
 
-const Loader = (props) => {
+const Loader = props => {
 	return (
 		<Fragment>
 			<div class="lds-default">
@@ -18,7 +18,7 @@ const Loader = (props) => {
 				<div />
 				<div />
 			</div>
-      <h3>{props.message}</h3>
+			<h4>{props.message}</h4>
 		</Fragment>
 	);
 };
