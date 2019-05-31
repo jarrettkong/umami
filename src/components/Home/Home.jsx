@@ -47,7 +47,7 @@ export class Home extends Component {
 					<h1>Umami</h1>
 					<SearchForm history={this.props.history} />
 				</header>
-				<div>
+				<div className="Home-new-container">
 					<h3>New and Hot</h3>
 					<output className="Home-output">{!this.state.loading ? trending : <h2>Loading....</h2>}</output>
 				</div>

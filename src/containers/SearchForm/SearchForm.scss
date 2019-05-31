@@ -1,69 +1,29 @@
-@import '../../util/colors';
+@import '../../util/colors.scss';
 
 .SearchForm {
 	display: flex;
 	justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.Search-tagline {
-	color: white;
-	font-size: 50px;
-}
-
-.Search-form {
-	width: 1000px;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-
-	& label {
-		font-size: 20px;
-		color: white;
-		font-weight: 600;
-		margin-bottom: 5px;
-	}
-	& > * {
-		margin: 0 10px;
-	}
-}
-
-.Search-form-input {
-	height: 45px;
-	border: 0;
-	border-radius: 5px;
-	padding: 15px;
-	font-size: 20px;
-	font-weight: 300;
-	width: 300px;
-	color: $body-copy-color;
-	&:focus {
-		outline: transparent;
-	}
-}
-
-.Search-form-input-wrapper > * {
-	display: block;
-	text-align: left;
-}
-
-.Search-submit-btn {
-	padding: 10px;
-	height: 45px;
-	width: 100px;
-	line-height: 100%;
-	color: white;
-	font-weight: 600;
-	background-color: $main-color;
-	display: flex;
-	font-size: 20px;
-	justify-content: center;
-	border: 0;
-	border-radius: 4px;
-	cursor: pointer;
 	align-items: center;
-	&:focus {
-		outline: transparent;
-	}
+	flex-direction: column;
+	input {
+		height: 40px;
+		border: 0;
+		border-radius: 5px;
+		padding-left: 15px;
+		font-size: 20px;
+    font-weight: 300;
+    margin: 10px 0;
+		width: 350px;
+		color: $body-copy-color;
+		&:focus {
+			outline: transparent;
+		}
+  }
+  
+  input[type='submit'] {
+    color: white;
+    padding: 0;
+    background-color: $main-color;
+    font-weight: 600;
+  }
 }
