@@ -27,6 +27,24 @@
 
 .Home-output {
 	display: grid;
+	padding-bottom: 25px;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 30px;
+}
+
+.Home-new-container {
+	& h3 {
+		font-size: 35px;
+		margin: 15px 0;
+		font-weight: 300;
+	}
+}
+
+.Home-loader-container {
+	height: calc(100vh - 450px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
 }

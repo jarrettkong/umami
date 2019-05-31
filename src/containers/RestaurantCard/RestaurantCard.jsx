@@ -7,17 +7,13 @@ const RestaurantCard = props => {
 	return (
 		<Link to={`/restaurant/${info.id}`} style={{ textDecoration: 'none' }}>
 			<div className="RestaurantCard">
-				<div className="RestaurantCard-header">
+				<img src={info.image_url} alt="" />
+				<div className="RestaurantCard-info">
 					<h2>{info.name}</h2>
-				</div>
-				<div className="RestaurantCard-flex-wrapper">
-					<img src={info.image_url} alt="" />
-					<div>
-						<p>{info.location.address1}</p>
-						<p>
-							{info.location.city}, {info.location.state}
-						</p>
-					</div>
+					<p>{info.location.address1}</p>
+					<p>
+						{info.location.city}, {info.location.state}
+					</p>
 				</div>
 			</div>
 		</Link>

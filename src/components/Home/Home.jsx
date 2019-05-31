@@ -50,9 +50,13 @@ export class Home extends Component {
 				</header>
 				<div className="Home-new-container">
 					<h3>New and Hot</h3>
-					<output className="Home-output">
-						{!this.state.loading ? trending : <Loader message="Loading new and hot" />}
-					</output>
+					{!this.state.loading ? (
+						<output className="Home-output">{trending}</output>
+					) : (
+						<div className="Home-loader-container">
+							<Loader message="Loading new and hot" />
+						</div>
+					)}
 				</div>
 			</section>
 		);
