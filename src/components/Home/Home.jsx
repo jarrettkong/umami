@@ -9,7 +9,8 @@ import './Home.scss';
 
 export class Home extends Component {
 	state = {
-		loading: false
+		loading: false,
+		error: null
 	};
 
 	componentDidMount() {
@@ -32,8 +33,8 @@ export class Home extends Component {
 				}
 			});
 			this.props.addTrending(res.data.businesses);
-		} catch (err) {
-			console.log(err.message);
+		} catch (error) {
+			this.setState({ error });
 		}
 	};
 
@@ -53,8 +54,8 @@ export class Home extends Component {
 					{!this.state.loading ? (
 						<output className="Home-output">{trending}</output>
 					) : (
-						<div className="Home-loader-container">
-							<Loader message="Loading new and hot" />
+						<div className="loader-container">
+							<Loader message="Loading New and Hot..." />
 						</div>
 					)}
 				</div>

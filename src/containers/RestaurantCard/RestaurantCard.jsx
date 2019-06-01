@@ -5,7 +5,7 @@ import './RestaurantCard.scss';
 const RestaurantCard = props => {
 	const { info } = props;
 	return (
-		<Link to={`/restaurant/${info.id}`} style={{ textDecoration: 'none' }}>
+		<Link to={`/restaurant/${info.id}`} style={styleLink()}>
 			<div className="RestaurantCard">
 				<img src={info.image_url} alt="" />
 				<div className="RestaurantCard-info">
@@ -18,6 +18,13 @@ const RestaurantCard = props => {
 			</div>
 		</Link>
 	);
+};
+
+const styleLink = () => {
+	return {
+		textDecoration: 'none',
+		color: 'inherit'
+	};
 };
 
 export default RestaurantCard;

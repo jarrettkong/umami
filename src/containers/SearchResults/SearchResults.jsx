@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Yelp from '../../api/Yelp';
 import { connect } from 'react-redux';
+import './SearchResults.scss';
 
 export class SearchResults extends Component {
 	state = {
@@ -40,12 +41,16 @@ export class SearchResults extends Component {
 		});
 
 		return !this.state.loading ? (
-			<output>
-				<Link to="/">Return Home</Link>
-				{results || <h1>Your search did not match any results :(</h1>}
-			</output>
+			<div className="SearchResults">
+				<Link to="/">
+					<button>{'<'} Return Home</button>
+				</Link>
+				<output className="SearchResults-grid">{results || <h1>Your search did not match any results :(</h1>}</output>
+			</div>
 		) : (
-			<Loader message="Searching Umami"/>
+			<div className="loader-container">
+				<Loader message="Searching Umami..." />
+			</div>
 		);
 	}
 }

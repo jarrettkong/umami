@@ -50,7 +50,9 @@ class RestaurantPage extends Component {
 				<p>{details.reviewCount}</p>
 			</div>
 		) : (
-			<Loader message="Loading restaurant data..." />
+			<div className="loader-container">
+				<Loader message="Loading restaurant data..." />
+			</div>
 		);
 	}
 }

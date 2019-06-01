@@ -2,3 +2,12 @@
   max-width: 1400px;
   margin: auto;
 }
+
+.loader-container {
+	height: calc(100vh - 525px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}

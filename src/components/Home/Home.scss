@@ -3,7 +3,7 @@
 	background-color: white;
 	& h1 {
 		color: white;
-		font-size: 50px;
+		font-size: 70px;
 		margin: 0;
 	}
 }
@@ -38,13 +38,4 @@
 		margin: 15px 0;
 		font-weight: 300;
 	}
-}
-
-.Home-loader-container {
-	height: calc(100vh - 450px);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
 }
