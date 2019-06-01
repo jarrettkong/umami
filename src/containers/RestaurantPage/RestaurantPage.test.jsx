@@ -1,18 +1,24 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { RestaurantPage } from './RestaurantPage';
-import { mockDetails } from '../../util/mockData';
+import { mockDetails, mockResult } from '../../util/mockData';
 import { cleanDetails } from '../../util/cleaners';
 
 jest.mock('../../util/cleaners');
 
 describe('RestaurantPage', () => {
-	let wrapper;
+	let wrapper, mockAddDetails;
 	beforeEach(() => {
-		wrapper = shallow(<RestaurantPage details={mockDetails} id={mockDetails[0].id} />);
+		mockAddDetails = jest.fn();
+		wrapper = shallow(<RestaurantPage details={mockDetails} id={mockDetails[0].id} addDetails={mockAddDetails} />);
 	});
 
 	it('should match the snapshot', () => {
+		expect(wrapper).toMatchSnapshot();
+	});
+
+	it('should match the snapshot', () => {
+		wrapper.setState({ loading: true });
 		expect(wrapper).toMatchSnapshot();
 	});
 
@@ -39,5 +45,5 @@ describe('RestaurantPage', () => {
 			await wrapper.instance().getRestaurantDetails(mockDetails[0].id);
 			expect(cleanDetails).toHaveBeenCalledWith(mockDetails[0]);
 		});
-	});
+  });
 });
