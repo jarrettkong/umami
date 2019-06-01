@@ -16,6 +16,11 @@ describe('Home', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	it('should match the snapshot', () => {
+		wrapper.setState({ loading: true });
+		expect(wrapper).toMatchSnapshot();
+	});
+
 	describe('componentDidMount', () => {
 		it('should not call fetchHotRestaurants if there are existing trending movies', () => {
 			jest.spyOn(wrapper.instance(), 'fetchHotRestaurants');

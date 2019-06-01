@@ -147,3 +147,7 @@ export const mockDetails = [
 		transactions: []
 	}
 ];
+
+export const mockHistory = {
+	push: (path, state = ['/dir']) => state.push(path)
+};
