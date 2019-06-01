@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { RestaurantPage, mapStateToProps, mapDispatchToProps } from './RestaurantPage';
-import { mockDetails, mockResult } from '../../util/mockData';
+import { mockDetails } from '../../util/mockData';
 import { addDetails } from '../../actions';
 import { cleanDetails } from '../../util/cleaners';
 

@@ -39,16 +39,20 @@ describe('SearchResults', () => {
 	});
 
 	describe('mapStateToProps', () => {
-		const mockState = { results: mockResults };
-		const mappedProps = mapStateToProps(mockState);
-		expect(mappedProps).toEqual({ results: mockResults });
+		it('should return an object with results', () => {
+			const mockState = { results: mockResults };
+			const mappedProps = mapStateToProps(mockState);
+			expect(mappedProps).toEqual({ results: mockResults });
+		});
 	});
 
 	describe('mapDispatchToProps', () => {
-		const mockDispatch = jest.fn();
-		const actionToDispatch = addSearchResults(mockResults);
-		const mappedProps = mapDispatchToProps(mockDispatch);
-		mappedProps.addSearchResults(mockResults);
-		expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+		it('should call dispatch with an addSearchResults action', () => {
+			const mockDispatch = jest.fn();
+			const actionToDispatch = addSearchResults(mockResults);
+			const mappedProps = mapDispatchToProps(mockDispatch);
+			mappedProps.addSearchResults(mockResults);
+			expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+		});
 	});
 });
