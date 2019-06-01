@@ -5,31 +5,32 @@ import { addDetails } from '../../actions';
 import { cleanDetails } from '../../util/cleaners';
 import Yelp from '../../api/Yelp';
 
-class RestaurantPage extends Component {
+export class RestaurantPage extends Component {
 	state = {
 		loading: false,
 		details: {}
 	};
 
 	componentDidMount() {
-		this.getRestaurantDetails(this.props.id);
-	}
-
-	getRestaurantDetails = id => {
 		const existingInfo = this.props.details.find(r => r.id === this.props.id);
 		if (!existingInfo) {
 			this.setState({ loading: true }, async () => {
-				try {
-					const res = await Yelp.get(`/businesses/${id}`);
-					const details = cleanDetails(res.data);
-					this.props.addDetails(details);
-					this.setState({ loading: false, details });
-				} catch (err) {
-					console.log(err.message);
-				}
+				await this.getRestaurantDetails(this.props.id);
+				this.setState({ loading: false });
 			});
 		} else {
 			this.setState({ details: existingInfo });
+		}
+	}
+
+	getRestaurantDetails = async id => {
+		try {
+			const res = await Yelp.get(`/businesses/${id}`);
+			const details = cleanDetails(res.data);
+			this.props.addDetails(details);
+			this.setState({ loading: false, details });
+		} catch (err) {
+			console.log(err.message);
 		}
 	};
 
