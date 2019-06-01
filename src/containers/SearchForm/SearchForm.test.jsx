@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchForm from './SearchForm';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { mockHistory } from '../../util/mockData';
 
 describe('SearchForm', () => {
@@ -13,11 +13,11 @@ describe('SearchForm', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it.skip('should call redirect on form submit', () => {
+	it('should call redirect on form submit', () => {
 		const mockEvent = { preventDefault: () => {} };
-		jest.spyOn(wrapper.instance(), 'redirect');
+		jest.spyOn(mockEvent, 'preventDefault');
 		wrapper.find('.SearchForm').simulate('submit', mockEvent);
-		expect(wrapper.instance().redirect).toHaveBeenCalledWith(mockEvent);
+		expect(mockEvent.preventDefault).toHaveBeenCalled();
 	});
 
 	it('should set state when information is input', () => {

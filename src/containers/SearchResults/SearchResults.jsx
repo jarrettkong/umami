@@ -10,7 +10,8 @@ import './SearchResults.scss';
 
 export class SearchResults extends Component {
 	state = {
-		loading: false
+		loading: false,
+		error: null
 	};
 
 	componentDidMount() {
@@ -30,8 +31,9 @@ export class SearchResults extends Component {
 				}
 			});
 			this.props.addSearchResults(res.data.businesses);
-		} catch (err) {
-			console.log(err.message);
+			this.setState({ error: null });
+		} catch (error) {
+			console.log({ error });
 		}
 	};
 
