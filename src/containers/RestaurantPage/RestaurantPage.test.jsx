@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { RestaurantPage } from './RestaurantPage';
+import { RestaurantPage, mapStateToProps, mapDispatchToProps } from './RestaurantPage';
 import { mockDetails, mockResult } from '../../util/mockData';
+import { addDetails } from '../../actions';
 import { cleanDetails } from '../../util/cleaners';
 
 jest.mock('../../util/cleaners');
@@ -39,11 +40,38 @@ describe('RestaurantPage', () => {
 	});
 
 	describe('getRestaurantDetails', () => {
-		it.skip('should call Yelp.get with the correct params', () => {});
+		it.skip('should call Yelp.get with the correct params', () => {
+			expect(wrapper.state('error')).toEqual(null);
+			expect(wrapper.state('loading')).toEqual(false);
+		});
 
 		it('should call cleanDetails with the raw data', async () => {
 			await wrapper.instance().getRestaurantDetails(mockDetails[0].id);
 			expect(cleanDetails).toHaveBeenCalledWith(mockDetails[0]);
 		});
-  });
+
+		it('should call props.addDetails with the clean data', async () => {
+			const details = cleanDetails(mockDetails[0]);
+			await wrapper.instance().getRestaurantDetails(mockDetails[0].id);
+			expect(mockAddDetails).toHaveBeenCalledWith(details);
+		});
+	});
+
+	describe('mapStateToProps', () => {
+		it('should return an object with the right state', () => {
+			const mockState = { details: mockDetails };
+			const mappedProps = mapStateToProps(mockState);
+			expect(mappedProps).toEqual({ details: mockDetails });
+		});
+	});
+
+	describe('mapDispatchToProps', () => {
+		it('should call dispatch with an addDetails action', () => {
+			const mockDispatch = jest.fn();
+			const actionToDispatch = addDetails(mockDetails[0]);
+			const mappedProps = mapDispatchToProps(mockDispatch);
+			mappedProps.addDetails(mockDetails[0]);
+			expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+		});
+	});
 });

@@ -8,7 +8,8 @@ import Yelp from '../../api/Yelp';
 export class RestaurantPage extends Component {
 	state = {
 		loading: false,
-		details: {}
+		details: {},
+		error: null
 	};
 
 	componentDidMount() {
@@ -16,7 +17,7 @@ export class RestaurantPage extends Component {
 		if (!existingInfo) {
 			this.setState({ loading: true }, async () => {
 				await this.getRestaurantDetails(this.props.id);
-				this.setState({ loading: false });
+				this.setState({ loading: false, error: null });
 			});
 		} else {
 			this.setState({ details: existingInfo });
@@ -29,8 +30,8 @@ export class RestaurantPage extends Component {
 			const details = cleanDetails(res.data);
 			this.props.addDetails(details);
 			this.setState({ loading: false, details });
-		} catch (err) {
-			console.log(err.message);
+		} catch (error) {
+			this.setState({ error });
 		}
 	};
 
