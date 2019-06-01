@@ -20,7 +20,7 @@ const RestaurantCard = props => {
 	);
 };
 
-const styleLink = () => {
+export const styleLink = () => {
 	return {
 		textDecoration: 'none',
 		color: 'inherit'

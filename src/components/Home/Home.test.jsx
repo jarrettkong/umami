@@ -63,9 +63,9 @@ describe('Home', () => {
 
 	describe('mapStateToProps', () => {
 		it('should return an object with a key of trending and a value of an array of restaurants', () => {
-			const mockState = { trending: mockResults };
+			const mockState = { trending: mockResults.businesses };
 			const mappedProps = mapStateToProps(mockState);
-			expect(mappedProps).toEqual({ trending: mockResults });
+			expect(mappedProps).toEqual({ trending: mockResults.businesses });
 		});
 	});
 

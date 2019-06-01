@@ -43,4 +43,4 @@ export const mockResult = {
 	}
 };
 
-export const mockResults = [mockResult, mockResult, mockResult];
+export const mockResults = [mockResult.businesses[0], mockResult.businesses[0], mockResult.businesses[0]];
