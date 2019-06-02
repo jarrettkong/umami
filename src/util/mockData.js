@@ -57,7 +57,7 @@ export const mockDetails = [
 			'https://www.yelp.com/biz/gary-danko-san-francisco?adjust_creative=GSLYYM_QtEhMcQZmgQEI5Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=GSLYYM_QtEhMcQZmgQEI5Q',
 		phone: '+14157492060',
 		display_phone: '(415) 749-2060',
-		review_count: 5380,
+		review_count: 5381,
 		categories: [
 			{
 				alias: 'newamerican',
