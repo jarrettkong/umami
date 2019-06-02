@@ -3,6 +3,7 @@ import { resultsReducer } from './resultsReducer';
 import * as mockData from '../util/mockData';
 import * as actions from '../actions';
 import { detailsReducer } from './detailsReducer';
+import { reviewsReducer } from './reviewsReducer';
 
 describe('trendingReducer', () => {
 	it('should return the initial state', () => {
@@ -50,5 +51,22 @@ describe('detailsReducer', () => {
 		const { mockDetails } = mockData;
 		const result = detailsReducer(mockDetails, actions.addDetails(mockDetails[0]));
 		expect(result).toHaveLength(2);
+	});
+});
+
+describe('reviewsReducer', () => {
+	it('should return the initial state', () => {
+		const invalidAction = {
+			type: 'INVALID_ACTION',
+			payload: null
+		};
+		const result = reviewsReducer(undefined, invalidAction);
+		expect(result).toEqual([]);
+	});
+
+	it('should add the new details to the existing state', () => {
+		const { mockReviews } = mockData;
+		const result = reviewsReducer(undefined, actions.addReviews(mockReviews));
+		expect(result).toEqual(mockReviews);
 	});
 });
