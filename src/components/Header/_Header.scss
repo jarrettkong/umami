@@ -8,6 +8,9 @@
 	justify-content: space-between;
 	height: 60px;
 	background-color: #ffffff;
+	box-shadow: 0 4px 2px -2px lightgrey;
+	-webkit-box-shadow: 0 4px 2px -2px lightgrey;
+	z-index: 10;
 }
 
 .Header-container {

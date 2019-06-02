@@ -1,7 +1,7 @@
 .RestaurantPage {
 	background-color: white;
 	padding: 25px;
-	position: relative;
+	min-height: calc(100vh - 60px);
 	& h2 {
 		margin-top: 0;
 	}
@@ -14,6 +14,8 @@
 		& li {
 			padding: 20px;
 			border-top: 1px solid lightgrey;
+			font-style: italic;
+			font-weight: 300;
 		}
 	}
 }
@@ -29,8 +31,8 @@
 	border-radius: 5px;
 	position: absolute;
 	text-decoration: none;
-	top: 25px;
-	right: 25px;
+	bottom: 0;
+	left: 0;
 }
 
 .RestaurantPage-flex-wrapper {
@@ -45,6 +47,7 @@
 	}
 
 	& > div {
-		margin-left: 25px;
+		margin-left: 50px;
+		position: relative;
 	}
 }
