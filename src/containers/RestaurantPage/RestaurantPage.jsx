@@ -22,7 +22,7 @@ export class RestaurantPage extends Component {
 				this.setState({ loading: false, error: null });
 			});
 		} else {
-			const reviews = this.props.reviews.filter(r => r.id === this.props.id);
+			const reviews = this.props.reviews.find(r => r.id === this.props.id);
 			this.setState({ details, reviews: reviews.reviews });
 		}
 	}

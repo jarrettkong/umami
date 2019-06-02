@@ -33,3 +33,14 @@ describe('addDetails', () => {
 		expect(actions.addTrending(mockData.mockResults)).toEqual(expected);
 	});
 });
+
+describe('addReviews', () => {
+	it('should return an action of type ADD_REVIEWS and a payload of restaurants', () => {
+		const expected = {
+			type: 'ADD_REVIEWS',
+			payload: { reviews: mockData.mockReviews }
+		};
+
+		expect(actions.addReviews(mockData.mockReviews)).toEqual(expected);
+	});
+});
