@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Loader from '../../components/Loader/Loader';
 import { connect } from 'react-redux';
-import { addDetails } from '../../actions';
+import { addDetails, addReviews } from '../../actions';
 import { cleanDetails } from '../../util/cleaners';
 import Yelp from '../../api/Yelp';
 
@@ -9,6 +9,7 @@ export class RestaurantPage extends Component {
 	state = {
 		loading: false,
 		details: {},
+		reviews: [],
 		error: null
 	};
 
@@ -27,9 +28,11 @@ export class RestaurantPage extends Component {
 	getRestaurantDetails = async id => {
 		try {
 			const res = await Yelp.get(`/businesses/${id}`);
+			const reviews = await Yelp.get(`/businesses/${id}/reviews`);
 			const details = cleanDetails(res.data);
+			this.props.addReviews(reviews);
 			this.props.addDetails(details);
-			this.setState({ loading: false, details });
+			this.setState({ loading: false, details, reviews });
 		} catch (error) {
 			this.setState({ error });
 		}
@@ -64,7 +67,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-	addDetails: details => dispatch(addDetails(details))
+	addDetails: details => dispatch(addDetails(details)),
+	addReviews: reviews => dispatch(addReviews(reviews))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RestaurantPage);
