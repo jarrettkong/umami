@@ -1,0 +1,50 @@
+.RestaurantPage {
+	background-color: white;
+	padding: 25px;
+	position: relative;
+	& h2 {
+		margin-top: 0;
+	}
+
+	& ul {
+		list-style: none;
+		padding: 0;
+		border-bottom: 1px solid lightgrey;
+
+		& li {
+			padding: 20px;
+			border-top: 1px solid lightgrey;
+		}
+	}
+}
+
+.yelp-link {
+	background: url('../../util/images/yelp-logo.png');
+	background-color: #d32323;
+	background-size: cover;
+	background-position: center;
+	color: white;
+	font-weight: 600;
+	padding: 15px 50px;
+	border-radius: 5px;
+	position: absolute;
+	text-decoration: none;
+	top: 25px;
+	right: 25px;
+}
+
+.RestaurantPage-flex-wrapper {
+	display: flex;
+	justify-content: flex-start;
+
+	& img {
+		height: 400px;
+		width: 400px;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	& > div {
+		margin-left: 25px;
+	}
+}

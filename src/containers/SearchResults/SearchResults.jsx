@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import RestaurantCard from '../RestaurantCard/RestaurantCard';
 import Loader from '../../components/Loader/Loader';
 import { addSearchResults } from '../../actions';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Yelp from '../../api/Yelp';
 import { connect } from 'react-redux';

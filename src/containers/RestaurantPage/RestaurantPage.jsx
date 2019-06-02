@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { addDetails, addReviews } from '../../actions';
 import { cleanDetails, cleanReviews } from '../../util/cleaners';
 import Yelp from '../../api/Yelp';
-import StarRatings from 'react-star-ratings'
+import StarRatings from 'react-star-ratings';
+import './RestaurantPage.scss';
 
 export class RestaurantPage extends Component {
 	state = {
@@ -44,21 +45,24 @@ export class RestaurantPage extends Component {
 	render() {
 		const { details, reviews } = this.state;
 		return !this.state.loading ? (
-			<div>
-				<h1>{details.name}</h1>
-				<img src={details.image} alt={details.name} />
-				<p>{details.price}</p>
-				<p>{details.address}</p>
-				<p>{details.city}</p>
-				<p>{details.phone}</p>
-				<a href={details.yelpUrl} rel="noopener noreferrer" target="_blank">
-					Website
-				</a>
-					<StarRatings rating={details.rating} starDimension="25px" starRatedColor="#af0000" />
-				<ul>
-					{reviews.map(r => <li>"{r}"</li>)}
-				</ul>
-				<p>Based on {details.reviewCount} review(s)</p>
+			<div className="RestaurantPage">
+				<h2>{details.name}</h2>
+				<div className="RestaurantPage-flex-wrapper">
+					<img src={details.image} alt={details.name} />
+					<div>
+						<p>{details.price}</p>
+						<p>{details.address}</p>
+						<p>{details.city}</p>
+						<p>{details.phone}</p>
+						<a href={details.yelpUrl} rel="noopener noreferrer" target="_blank" className="yelp-link">
+							&nbsp;
+						</a>
+						<StarRatings rating={details.rating} starDimension="25px" starRatedColor="#af0000" />
+						<p>Based on {details.reviewCount} review(s)</p>
+					</div>
+				</div>
+				<h4>Recent Reviews</h4>
+				<ul>{reviews.map(r => <li>"{r}"</li>)}</ul>
 			</div>
 		) : (
 			<div className="loader-container">
