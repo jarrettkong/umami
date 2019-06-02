@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { addDetails, addReviews } from '../../actions';
 import { cleanDetails, cleanReviews } from '../../util/cleaners';
 import Yelp from '../../api/Yelp';
+import StarRatings from 'react-star-ratings'
 
 export class RestaurantPage extends Component {
 	state = {
@@ -34,18 +35,18 @@ export class RestaurantPage extends Component {
 			const reviews = cleanReviews(reviewsRes.data.reviews, id);
 			this.props.addDetails(details);
 			this.props.addReviews(reviews);
-			this.setState({ loading: false, details, reviews });
+			this.setState({ loading: false, details, reviews: reviews.reviews });
 		} catch (error) {
 			this.setState({ error });
 		}
 	};
 
 	render() {
-		const { details } = this.state;
+		const { details, reviews } = this.state;
 		return !this.state.loading ? (
 			<div>
 				<h1>{details.name}</h1>
-				<img src={details.image} alt={`${details.name} `} />
+				<img src={details.image} alt={details.name} />
 				<p>{details.price}</p>
 				<p>{details.address}</p>
 				<p>{details.city}</p>
@@ -53,8 +54,11 @@ export class RestaurantPage extends Component {
 				<a href={details.yelpUrl} rel="noopener noreferrer" target="_blank">
 					Website
 				</a>
-				<p>{details.rating}</p>
-				<p>{details.reviewCount}</p>
+					<StarRatings rating={details.rating} starDimension="25px" starRatedColor="#af0000" />
+				<ul>
+					{reviews.map(r => <li>"{r}"</li>)}
+				</ul>
+				<p>Based on {details.reviewCount} review(s)</p>
 			</div>
 		) : (
 			<div className="loader-container">
