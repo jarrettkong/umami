@@ -1,30 +1,35 @@
 @import '../../util//colors.scss';
 
 .SearchResults {
-  padding: 25px;
+	padding: 25px;
+	background-color: white;
 
-  & button {
-    border: 0;
-    background-color: $main-color;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-    height: 35px;
-    border-radius: 3px;
-    margin-bottom: 25px;
+	& h2 {
+		margin-top: 0;
+	}
 
-    &:hover {
-      cursor: pointer;
-      background-color: lighten($color: $main-color, $amount: 5)
-    }
+	& button {
+		border: 0;
+		background-color: $main-color;
+		color: white;
+		font-weight: 600;
+		font-size: 16px;
+		height: 35px;
+		border-radius: 3px;
+		margin-bottom: 25px;
 
-    &:focus {
-      outline: transparent
-    }
-  }
+		&:hover {
+			cursor: pointer;
+			background-color: lighten($color: $main-color, $amount: 5);
+		}
+
+		&:focus {
+			outline: transparent;
+		}
+	}
 }
 
 .SearchResults-grid {
-  display: grid;
-  grid-gap: 25px;
+	display: grid;
+	grid-gap: 25px;
 }

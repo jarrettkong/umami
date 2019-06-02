@@ -1,17 +1,14 @@
 import React from 'react';
-import { Dns as HeaderIcon } from '@material-ui/icons';
+import { NavLink } from 'react-router-dom';
 import './_Header.scss';
 
 const Header = () => {
 	return (
 		<nav className="Header">
 			<div className="Header-container">
-				<h1 className="Header-logo">
-					<span>
-						<HeaderIcon className="Header-icon" />
-					</span>{' '}
-					Umami
-				</h1>
+				<NavLink to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+					<h1 className="Header-logo">Umami</h1>
+				</NavLink>
 			</div>
 			<div className="Header-container">
 				<a href="/" className="Header-button signup-button" role="button">

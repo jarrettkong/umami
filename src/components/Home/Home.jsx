@@ -46,7 +46,7 @@ export class Home extends Component {
 		return (
 			<section className="Home">
 				<header className="Home-header">
-					<h1>Umami</h1>
+					<h2>Denver's Guide to Japanese Cuisine</h2>
 					<SearchForm history={this.props.history} />
 				</header>
 				<div className="Home-new-container">

@@ -10,7 +10,7 @@ const RestaurantCard = props => {
 			<div className="RestaurantCard">
 				<img src={info.image_url} alt="" />
 				<div className="RestaurantCard-info">
-					<h2>{info.name}</h2>
+					<h4>{info.name}</h4>
 					<StarRatings rating={info.rating} starDimension="25px" starRatedColor="#af0000" />
 					<p>Based on {info.review_count} review(s)</p>
 					<p>{info.location.address1}</p>

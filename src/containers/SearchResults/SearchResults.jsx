@@ -44,9 +44,7 @@ export class SearchResults extends Component {
 
 		return !this.state.loading ? (
 			<div className="SearchResults">
-				<Link to="/">
-					<button>{'<'} Return Home</button>
-				</Link>
+				<h2>Top 20 results for '{this.props.query}'</h2>
 				<output className="SearchResults-grid">{results || <h1>Your search did not match any results :(</h1>}</output>
 			</div>
 		) : (

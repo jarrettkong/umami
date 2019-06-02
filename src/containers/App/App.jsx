@@ -2,12 +2,14 @@ import React from 'react';
 import Home from '../../components/Home/Home';
 import SearchResults from '../SearchResults/SearchResults';
 import RestaurantPage from '../RestaurantPage/RestaurantPage';
+import Header from '../../components/Header/Header';
 import { Switch, Route } from 'react-router-dom';
 import './App.scss';
 
 const App = () => {
 	return (
 		<div className="App">
+			<Header />
 			<Switch>
 				<Route exact path="/" render={({ history }) => <Home history={history} />} />
 				<Route exact path="/search/:query" render={({ match }) => <SearchResults query={match.params.query} />} />
