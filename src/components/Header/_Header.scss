@@ -1,0 +1,57 @@
+@import '../../util/colors.scss';
+
+.Header {
+	display: flex;
+	flex-direction: row;
+	padding: 0 20px;
+	align-items: center;
+	justify-content: space-between;
+	height: 60px;
+	background-color: #ffffff;
+}
+
+.Header-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 25px;
+	justify-items: center;
+}
+
+.Header-logo {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	& span {
+		color: $main-color;
+	}
+}
+
+.Header-button {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	border-radius: 4px;
+	font-weight: 600;
+	line-height: 100%;
+	&:visited {
+		color: inherit;
+	}
+	&:focus {
+		outline: transparent;
+	}
+}
+
+.signup-button {
+	color: white;
+	background-color: $main-color;
+	&:visited {
+		color: white;
+	}
+}
+
+.login-button {
+	border: 1px solid $body-copy-color;
+	width: 100%;
+}
