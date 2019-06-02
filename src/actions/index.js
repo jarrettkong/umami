@@ -18,3 +18,10 @@ export const addTrending = restaurants => {
 		payload: { restaurants }
 	};
 };
+
+export const addReviews = reviews => {
+	return {
+		type: 'ADD_REVIEWS',
+		payload: { reviews }
+	};
+};
