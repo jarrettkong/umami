@@ -4,7 +4,7 @@ import './Loader.scss';
 const Loader = props => {
 	return (
 		<Fragment>
-			<div class="lds-default">
+			<div className="lds-default">
 				<div />
 				<div />
 				<div />

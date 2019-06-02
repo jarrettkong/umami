@@ -15,3 +15,10 @@ export const cleanDetails = details => {
 		price: details.price || 'No price information available'
 	};
 };
+
+export const cleanReviews = (reviews, id) => {
+	return {
+		id,
+		reviews: reviews.map(r => r.text)
+	};
+};

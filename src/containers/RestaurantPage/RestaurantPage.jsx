@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Loader from '../../components/Loader/Loader';
 import { connect } from 'react-redux';
 import { addDetails, addReviews } from '../../actions';
-import { cleanDetails } from '../../util/cleaners';
+import { cleanDetails, cleanReviews } from '../../util/cleaners';
 import Yelp from '../../api/Yelp';
 
 export class RestaurantPage extends Component {
@@ -14,24 +14,26 @@ export class RestaurantPage extends Component {
 	};
 
 	componentDidMount() {
-		const existingInfo = this.props.details.find(r => r.id === this.props.id);
-		if (!existingInfo) {
+		const details = this.props.details.find(r => r.id === this.props.id);
+		if (!details) {
 			this.setState({ loading: true }, async () => {
 				await this.getRestaurantDetails(this.props.id);
 				this.setState({ loading: false, error: null });
 			});
 		} else {
-			this.setState({ details: existingInfo });
+			const reviews = this.props.reviews.filter(r => r.id === this.props.id);
+			this.setState({ details, reviews: reviews.reviews });
 		}
 	}
 
 	getRestaurantDetails = async id => {
 		try {
-			const res = await Yelp.get(`/businesses/${id}`);
-			const reviews = await Yelp.get(`/businesses/${id}/reviews`);
-			const details = cleanDetails(res.data);
-			this.props.addReviews(reviews);
+			const detailsRes = await Yelp.get(`/businesses/${id}`);
+			const reviewsRes = await Yelp.get(`/businesses/${id}/reviews`);
+			const details = cleanDetails(detailsRes.data);
+			const reviews = cleanReviews(reviewsRes.data.reviews, id);
 			this.props.addDetails(details);
+			this.props.addReviews(reviews);
 			this.setState({ loading: false, details, reviews });
 		} catch (error) {
 			this.setState({ error });
@@ -63,7 +65,8 @@ export class RestaurantPage extends Component {
 }
 
 export const mapStateToProps = state => ({
-	details: state.details
+	details: state.details,
+	reviews: state.reviews
 });
 
 export const mapDispatchToProps = dispatch => ({
