@@ -62,7 +62,19 @@ export class RestaurantPage extends Component {
 					</div>
 				</div>
 				<h4>Recent Reviews</h4>
-				<ul>{reviews.map(r => <li>"{r}"</li>)}</ul>
+				<ul>
+					{reviews.map(r => (
+						<li>
+							<p>{r.name}</p>
+							<StarRatings rating={r.rating} starRatedColor="#af0000" starDimension="15px" />
+							<p className="RestaurantPage-review-text">"{r.text}"</p>
+							<p>{r.date}</p>
+							<a href={r.url} rel="noopener noreferrer" target="_blank">
+								Read the full review on Yelp
+							</a>
+						</li>
+					))}
+				</ul>
 			</div>
 		) : (
 			<div className="loader-container">

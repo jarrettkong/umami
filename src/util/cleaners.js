@@ -19,6 +19,14 @@ export const cleanDetails = details => {
 export const cleanReviews = (reviews, id) => {
 	return {
 		id,
-		reviews: reviews.map(r => r.text)
+		reviews: reviews.map(r => {
+			return {
+				rating: r.rating,
+				name: r.user.name,
+				text: r.text,
+				date: r.time_created.slice(0, 9),
+				url: r.url
+			};
+		})
 	};
 };
