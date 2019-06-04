@@ -6,6 +6,7 @@ import { cleanDetails, cleanReviews } from '../../util/cleaners';
 import Yelp from '../../api/Yelp';
 import StarRatings from 'react-star-ratings';
 import './RestaurantPage.scss';
+import SimpleMap from '../../components/SimpleMap/SimpleMap';
 
 export class RestaurantPage extends Component {
 	state = {
@@ -43,8 +44,8 @@ export class RestaurantPage extends Component {
 	};
 
 	render() {
-		const { details, reviews } = this.state;
-		return !this.state.loading ? (
+		const { details, reviews, loading } = this.state;
+		return !loading ? (
 			<div className="RestaurantPage">
 				<div className="RestaurantPage-flex-wrapper">
 					<img src={details.image} alt={details.name} />
@@ -60,7 +61,14 @@ export class RestaurantPage extends Component {
 							&nbsp;
 						</a>
 					</div>
+
 				</div>
+				<div>
+						<h4>Where to find {details.name}</h4>
+						{details.coordinates && (
+							<SimpleMap lat={details.coordinates.latitude} lng={details.coordinates.longitude} name={details.name} />
+						)}
+					</div>
 				<h4>Recent Reviews</h4>
 				<ul>
 					{reviews.map(r => (

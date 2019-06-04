@@ -24,7 +24,7 @@ export const cleanReviews = (reviews, id) => {
 				rating: r.rating,
 				name: r.user.name,
 				text: r.text,
-				date: r.time_created.slice(0, 9),
+				date: r.time_created.slice(0, 10),
 				url: r.url
 			};
 		})
