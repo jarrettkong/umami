@@ -15,6 +15,7 @@ const App = () => {
 				<Route exact path="/" render={({ history }) => <Home history={history} />} />
 				<Route exact path="/search/:query" render={({ match }) => <SearchResults query={match.params.query} />} />
 				<Route exact path="/restaurant/:id" render={({ match }) => <RestaurantPage id={match.params.id} />} />
+				<Route render={()=> <h2>There's nothing here :(</h2>} />
 			</Switch>
 			<Footer />
 		</div>

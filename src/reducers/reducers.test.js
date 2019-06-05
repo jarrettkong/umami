@@ -67,6 +67,6 @@ describe('reviewsReducer', () => {
 	it('should add the new details to the existing state', () => {
 		const { mockReviews } = mockData;
 		const result = reviewsReducer(undefined, actions.addReviews(mockReviews));
-		expect(result).toEqual(mockReviews);
+		expect(result).toEqual([mockReviews]);
 	});
 });

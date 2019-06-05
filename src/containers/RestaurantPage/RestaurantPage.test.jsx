@@ -1,17 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { RestaurantPage, mapStateToProps, mapDispatchToProps } from './RestaurantPage';
-import { mockDetails } from '../../util/mockData';
+import { mockDetails, mockReviews } from '../../util/mockData';
 import { addDetails } from '../../actions';
 import { cleanDetails } from '../../util/cleaners';
 
 jest.mock('../../util/cleaners');
 
 describe('RestaurantPage', () => {
-	let wrapper, mockAddDetails;
+	let wrapper, mockAddDetails, reviews;
 	beforeEach(() => {
 		mockAddDetails = jest.fn();
-		wrapper = shallow(<RestaurantPage details={mockDetails} id={mockDetails[0].id} addDetails={mockAddDetails} />);
+		reviews = { id: 'WavvLdfdP6g8aZTtbBQHTw', reviews: mockReviews };
+		wrapper = shallow(
+			<RestaurantPage details={mockDetails} id={mockDetails[0].id} addDetails={mockAddDetails} reviews={[reviews]} />
+		);
 	});
 
 	it('should match the snapshot', () => {

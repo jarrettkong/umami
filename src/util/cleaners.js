@@ -12,7 +12,8 @@ export const cleanDetails = details => {
 		categories: details.categories.map(c => c.title),
 		coordinates: details.coordinates,
 		photos: details.photos,
-		price: details.price || 'No price information available'
+		price: details.price || 'No price information available',
+		open: details.is_open_now
 	};
 };
 

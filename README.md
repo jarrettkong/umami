@@ -1,68 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Umami
 
-In the project directory, you can run:
+## Table of contents
+* [Intro](#MovieTrackr-App)
+* [Screenshots](#Screenshots)
+* [Getting Started](#Getting-Started)
+* [How to Use](#How-to-Use)
+* [Project Emphasis](#Project-Emphasis)
+* [UI Design](#UI-Design)
+* [License](#License)
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# MovieTrackr App
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+This project is a Turing front-end evelopment project focused on working with React, Redux, and and Enzyme/Jest.
 
-### `npm test`
+This app is designed for users in the Denver Area who want to discover the local Japanese food. Users can search for a restaurant they want, or browse the new and trending restaurants on the home page. On an individual restaurant's page, users can see an embedded Google Maps view, with a pin for the location of the restaurant, as well as recent reviews. If they would like to see more information, there is a link to the full Yelp site.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
+![Home page](https://i.imgur.com/NGbEcsn.png)
+![Restaurant details page](https://i.imgur.com/zOu0WSK.png)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### View Live on GitHub
 
-### `npm run eject`
+If you'd like to clone this repository to your own local machine, run the following command in your terminal:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+git clone https://github.com/lynnerang/movie-tracker.git
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Then run the following command to install dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install && npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Then, go to `http://localhost:3000/` in your browser to see the code running in the browser.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## UI Design
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+There was no given direction for the design of the site, but the home and search pages were inspired by [OpenTable](https://www.opentable.com/). The individual restaurant pages had no layout reference, but elements like the map implementation, recent reviews, and unique photo are elements taken from both Open Table and [Yelp](https://www.yelp.com/)
 
-### Code Splitting
+## Project Emphasis
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+- [x] HTML & CSS 
+- [x] Wireframing
+- [x] UI design
+- [x] React
+- [x] React router
+- [x] Redux
+- [x] Axios
+- [x] API fetches
+- [x] Enzyme & Jest testing
+- [x] NPM
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+## Licensing
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+All credit goes to <a href="turing.io">Turing School of Software</a> for providing the project specifications.

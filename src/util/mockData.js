@@ -141,7 +141,7 @@ export const mockDetails = [
 					}
 				],
 				hours_type: 'REGULAR',
-				is_open_now: false
+				is_open_now: true
 			}
 		],
 		transactions: []
@@ -1013,48 +1013,48 @@ export const mockSearchResult = {
 
 export const mockReviews = [
 	{
-		id: 'xAG4O7l-t1ubbwVAlPnDKg',
+		id: '79FDWCwiuSWXlDxDsY0VJw',
+		url:
+			'https://www.yelp.com/biz/gary-danko-san-francisco?adjust_creative=GSLYYM_QtEhMcQZmgQEI5Q&hrid=79FDWCwiuSWXlDxDsY0VJw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=GSLYYM_QtEhMcQZmgQEI5Q',
+		text:
+			'I had a fabulous time at Gary Danko. I made my reservation two months in advance, through Open Table, for me and my wife. We got their a few minutes early...',
 		rating: 5,
+		time_created: '2019-05-29 22:34:26',
 		user: {
-			id: 'W8UK02IDdRS2GL_66fuq6w',
-			profile_url: 'https://www.yelp.com/user_details?userid=W8UK02IDdRS2GL_66fuq6w',
-			image_url: 'https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg',
-			name: 'Ella A.'
-		},
-		text:
-			'Went back again to this place since the last time i visited the bay area 5 months ago, and nothing has changed. Still the sketchy Mission, Still the cashier...',
-		time_created: '2016-08-29 00:41:13',
-		url:
-			'https://www.yelp.com/biz/la-palma-mexicatessen-san-francisco?hrid=hp8hAJ-AnlpqxCCu7kyCWA&adjust_creative=0sidDfoTIHle5vvHEBvF0w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=0sidDfoTIHle5vvHEBvF0w'
+			id: 'MJ8lq1t68qMGjOB5wE9o5w',
+			profile_url: 'https://www.yelp.com/user_details?userid=MJ8lq1t68qMGjOB5wE9o5w',
+			image_url: 'https://s3-media1.fl.yelpcdn.com/photo/yskvxP5B_6XY7Q-4HAsfGQ/o.jpg',
+			name: 'William H.'
+		}
 	},
 	{
-		id: '1JNmYjJXr9ZbsfZUAgkeXQ',
-		rating: 4,
-		user: {
-			id: 'rk-MwIUejOj6LWFkBwZ98Q',
-			profile_url: 'https://www.yelp.com/user_details?userid=rk-MwIUejOj6LWFkBwZ98Q',
-			image_url: null,
-			name: 'Yanni L.'
-		},
-		text:
-			'The "restaurant" is inside a small deli so there is no sit down area. Just grab and go.\n\nInside, they sell individually packaged ingredients so that you can...',
-		time_created: '2016-09-28 08:55:29',
+		id: 'Ky__kOy56l11fALtqy3KFQ',
 		url:
-			'https://www.yelp.com/biz/la-palma-mexicatessen-san-francisco?hrid=fj87uymFDJbq0Cy5hXTHIA&adjust_creative=0sidDfoTIHle5vvHEBvF0w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=0sidDfoTIHle5vvHEBvF0w'
+			'https://www.yelp.com/biz/gary-danko-san-francisco?adjust_creative=GSLYYM_QtEhMcQZmgQEI5Q&hrid=Ky__kOy56l11fALtqy3KFQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=GSLYYM_QtEhMcQZmgQEI5Q',
+		text:
+			"Enough has been said about the food so I'll talk about seating. Some of the two-seater tables are in a pretty tight row. This is fine, but if you want a...",
+		rating: 4,
+		time_created: '2019-05-29 19:53:12',
+		user: {
+			id: 'FOjzV3WfKeRw6rtiFuNFzQ',
+			profile_url: 'https://www.yelp.com/user_details?userid=FOjzV3WfKeRw6rtiFuNFzQ',
+			image_url: 'https://s3-media4.fl.yelpcdn.com/photo/LwIpZRKI6BonwldkjYHMSw/o.jpg',
+			name: 'Samantha W.'
+		}
 	},
 	{
-		id: 'SIoiwwVRH6R2s2ipFfs4Ww',
-		rating: 4,
-		user: {
-			id: 'rpOyqD_893cqmDAtJLbdog',
-			profile_url: 'https://www.yelp.com/user_details?userid=rpOyqD_893cqmDAtJLbdog',
-			image_url: null,
-			name: 'Suavecito M.'
-		},
-		text:
-			'Dear Mission District,\n\nI miss you and your many delicious late night food establishments and vibrant atmosphere.  I miss the way you sound and smell on a...',
-		time_created: '2016-08-10 07:56:44',
+		id: 'ZaeIbjG0HjBFiGeNjeRtBQ',
 		url:
-			'https://www.yelp.com/biz/la-palma-mexicatessen-san-francisco?hrid=m_tnQox9jqWeIrU87sN-IQ&adjust_creative=0sidDfoTIHle5vvHEBvF0w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=0sidDfoTIHle5vvHEBvF0w'
+			'https://www.yelp.com/biz/gary-danko-san-francisco?adjust_creative=GSLYYM_QtEhMcQZmgQEI5Q&hrid=ZaeIbjG0HjBFiGeNjeRtBQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=GSLYYM_QtEhMcQZmgQEI5Q',
+		text:
+			'Excellent.   Excellent food, excellent cocktails, and excellent service.\n\nEverything was delicious.  A few standouts were the poached egg with veal, duck...',
+		rating: 5,
+		time_created: '2019-05-26 11:20:19',
+		user: {
+			id: 'cehAxLDp96ohUqlW7ePavg',
+			profile_url: 'https://www.yelp.com/user_details?userid=cehAxLDp96ohUqlW7ePavg',
+			image_url: 'https://s3-media1.fl.yelpcdn.com/photo/O2xXscRd0kcsAsSdmU24FA/o.jpg',
+			name: 'Adriel W.'
+		}
 	}
 ];
